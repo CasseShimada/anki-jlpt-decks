@@ -316,6 +316,23 @@ a.Feedback {
   font-size: var(--text-xl);
 }
 
+.VocabHint {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-top-width: 0;
+  margin: 0;
+  padding: 10px 8px;
+}
+
+.VocabHint img {
+  display: block;
+  width: auto;
+  max-width: min(100%, 360px);
+  max-height: 220px;
+  object-fit: contain;
+}
+
 .SentenceList {
   min-height: 310px;
   display: flex;

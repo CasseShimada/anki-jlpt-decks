@@ -11,3 +11,7 @@ import-latest-apkg.command
 *.pyc
 /assets
 /source/
+/tmp/
+/deck-source/medias/*.png
+/deck-source/medias/*.jpg
+/deck-source/medias/voicepeak-custom-*.mp3

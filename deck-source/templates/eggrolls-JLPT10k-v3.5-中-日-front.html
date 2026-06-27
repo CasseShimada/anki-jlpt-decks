@@ -289,7 +289,19 @@
   }
 
   function hideFrontElements() {
-    document.querySelector('#FrontSide ul').style.display = 'none'
+    document.querySelectorAll('#FrontSide ul, #FrontSide .VocabHint').forEach(el => {
+      el.style.display = 'none'
+    })
+  }
+
+  function setupVocabHint() {
+    const hintImages = {
+    }
+    const image = hintImages[cleanWord()]
+    const cardSide = document.querySelector(isBackSide() ? '#BackSide' : '#FrontSide')
+    const sentenceList = cardSide?.querySelector('.SentenceList')
+    if (!image || !sentenceList || cardSide.querySelector('.VocabHint')) return
+    sentenceList.insertAdjacentHTML('beforebegin', `<figure class="VocabHint"><img src="${image}" alt=""></figure>`)
   }
 
   function hideFurigana() {
@@ -564,6 +576,7 @@
     setLang()
     setType()
     markWords()
+    setupVocabHint()
     hideKanji()
     removeSpaces()
     checkVersion()
